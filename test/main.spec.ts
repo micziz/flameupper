@@ -9,7 +9,7 @@ test('basic navigation works', async ({ page }) => {
 
   await about.click();
   await expect(page).toHaveURL('/about/');
-  await expect(page).toHaveTitle(/About/); 
+  await expect(page).toHaveTitle(/About/);
 
   await page.goBack();
   await expect(page).toHaveURL('/');
@@ -100,4 +100,17 @@ test('prefetching works', async ({ page }) => {
   await expect(preAbout).toHaveCount(1)
 
 
+});
+
+test('page change announcer works', async ({ page }) => {
+  await page.goto('http://localhost:3000');
+
+  const announcer = page.locator('#flamethrower-announcer');
+
+  await expect(announcer).toHaveText('Flamethrower');
+
+  const about = page.locator('#about');
+  await about.click();
+
+  await expect(announcer).toHaveText('About');
 });
