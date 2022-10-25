@@ -1,8 +1,28 @@
 # Flamethrower 🔥
 
-Status: Meme
+Status: Alfa
 
 A 2kB zero-config router and prefetcher that makes a static site feel like a blazingly fast SPA.
+
+## Installation
+
+```bash
+npm i flameupper
+# yarn
+yarn add flameupper
+# pnpm
+pnpm add flameupper
+```
+
+
+## Basic Usage
+
+```js
+import flamethrower from 'flamethrower-router';
+const router = flamethrower();
+```
+
+That's it. Your site now feels blazingly fast.
 
 ## Why?
 
@@ -17,19 +37,6 @@ Rather than requiring a frontend framework to take control of the entire DOM, th
 3. Uses `fetch` to get the next page, swaps the `<body>` out, merges the `<head>`, but does not re-execute head scripts (unless asked to).
 
 This means you can have long-lived JavaScript behaviors between navigations. It works especially well with native web components.
-
-## QuickStart
-
-```
-npm i flamethrower-router
-```
-
-```js
-import flamethrower from 'flamethrower-router';
-const router = flamethrower();
-```
-
-That's it. Your site now feels blazingly fast.
 
 ## Advanced Usage
 
@@ -85,47 +92,18 @@ Prefecthing is disabled by default.
 const router = flamethrower({ prefetch: 'visible' });
 ```
 
-### Misc
+### Faq
 
-**Supported in all browsers?** Yes. It will fallback to standard navigation if `window.history` does not exist.
+**Is it supported in all browsers?** Yes. It will fallback to standard navigation if `window.history` does not exist.
 
-**Does it work with Next.js?** No, any framework that fully hydrates to an SPA does not need this - you already have a client-side router.
+**Does it work with Next.js?** No. Any framework that fully hydrates to an SPA does not need this - you already have a client-side router.
 
-**Does it work with Astro?** I think so. It can share state between routes, but partially hydrated components may flash between routes.
+**Does it work with Astro?** Yes! It can share state between routes, but partially hydrated components may flash between routes.
 
-**Other things to know:**
+### Other things to know:
 
 - `<head>` scripts run only on the first page load. `<body>` scripts will still run on every page change (by design).
 - It's a good idea to show a global loading bar in case of a slow page load.
 - This library is inspired by [Turbo](https://github.com/hotwired/turbo) Drive.
 - This project is experimental.
 
-### Contributing
-
-Build it:
-
-```
-npm run dev
-```
-
-Serve the example:
-
-```
-npm run serve
-```
-
-Make sure all playwright tests pass before submitting new features.
-
-```
-npm run test
-```
-
-### Deploying
-
-You can deploy Flamethrower to [Vercel](http://vercel.com/) as follows:
-
-```
-npm run deploy
-```
-
-This uses the [Build Output API](https://vercel.com/docs/build-output-api/v3) and the [Vercel CLI](https://vercel.com/cli) to deploy the `/example` folder.
