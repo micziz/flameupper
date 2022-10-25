@@ -1,5 +1,5 @@
 {
-    "name": "flamethrower-router",
+    "name": "flameupper",
     "version": "0.1.0-alpha.1",
     "description": "Blazingly fast SPA-like router for static sites",
     "main": "dist/main.js",
@@ -7,9 +7,9 @@
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fireship-io/flamethrower.git"
+        "url": "https://github.com/micziz/flameupper.git"
     },
-    "homepage": "https://github.com/fireship-io/flamethrower#readme",
+    "homepage": "https://github.com/micziz/flameupper#readme",
     "scripts": {
         "dev": "vite build --watch",
         "build": "vite build && npx tsc --emitDeclarationOnly",
