@@ -1,3 +1,7 @@
+## THIS PROJECT IS DEAD
+
+This porject started after i saw that flametrhower went silent, but then i realized i do not have time to mantaine such a thing. Archiving the repo!
+
 # Flamethrower 🔥
 
 Status: Alfa
